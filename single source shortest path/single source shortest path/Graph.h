@@ -8,5 +8,23 @@ class Graph
 public:
 	void shortestPath(int);
 private:
-	int n, //the vertex0.0.2
+	int n,  //vertex number of graph G
+		*prev; //the array of previous vertex
+	Type **c, //the adjancency matrix of graph G
+		*dist;//the array of shortest path
 };
+
+
+template<class Type>
+class minHeapNode
+{
+	friend Graph<Type>;
+public:
+	operator int() const { return length; }
+private:
+	int i; //No. of vertex
+	Type length;//current road length
+};
+
+
+template<class Type>
